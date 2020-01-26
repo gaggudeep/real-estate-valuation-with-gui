@@ -1,7 +1,7 @@
 import numpy as np
 
 class Perceptron:
-    def __init__(self, learning_rate = 0.01, epoch = 10**5):
+    def __init__(self, learning_rate = 0.0001, epoch = 10**5):
         self.learning_rate = learning_rate
         self.epoch = epoch
 
@@ -27,11 +27,13 @@ import pandas as pd
 from matplotlib import pyplot as plt
 data_df = pd.read_csv("dataset.csv")
 del data_df["No"]
+del data_df["Longitude"]
+del data_df["Latitude"]
+del data_df["Transaction date"]
 corr_matrix = data_df.corr()
 plt.figure(figsize = [10,10])
 import seaborn as sb
 sb.heatmap(corr_matrix)
-del data_df["Transaction date"]
 targets = data_df["House price"].values
 del data_df["House price"]
 data = data_df.values
@@ -52,7 +54,7 @@ print(p.weights)
 '''Testing model and visualizing results''' 
 plt.figure(figsize = [15,4])
 plt.title("ORIGINAL VALUES V/S PREDICTED VALUES")
-plt.plot(np.arange(1, 84, 1), y_test, label = "Original")
+plt.plot(np.arange(1, 84, 1), y_test, label = "Original", marker = 'o', linestyle = '')
 plt.plot(np.arange(1, 84, 1), p.predict(x_test), label = "Prediction")
 plt.legend()
 plt.figure(figsize = [15,4])
