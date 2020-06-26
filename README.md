@@ -6,5 +6,5 @@ and gradient descent algorithm. Along with it a GUI was also built using which y
 Data for training and testing was taken from UCI ML Repository.
 -https://archive.ics.uci.edu/ml/datasets/Real+estate+valuation+data+set
 ## Example
-![recordit GIF](http://g.recordit.co/YXWJt0hHuj.gif)
+![Example](http://g.recordit.co/YXWJt0hHuj.gif)
 # Thanks
